@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registrate</title>
+    <link rel="icon" type="image/png" href="../../assets/imagenes/Logo.jpg">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/registrate.css" rel="stylesheet">
+</head>
+
+<body class="body">
+    <header>
+        <nav>
+            <div class="bloque">
+                <img src="../../assets/imagenes/Logo.jpg" alt="Logo Empanadas la Económica">
+                <div class="text-logo">
+                    <h1>Empanadas La Económica</h1>
+                    <p>Sabor casero, precio justo.</p>
+                </div>
+            </div>
+            <div class="bloque">
+                <a href="index.html" class="btn-primary">Inicio</a>
+                <a href="nosotros.html" class="btn-primary">Sobre Nosotros</a>
+                <a href="contactanos.html" class="btn-primary">Contáctanos</a>
+            </div>
+            <div class="bloque">
+                <a href="registrate.html" class="btn-secondary">Regístrate</a>
+                <a href="sesion.html" class="btn-secondary">Inicia Sesión</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="items-center">
+        <form action="sesion.html">
+            <div class="formulario-registro">
+                <div class="flex-column">
+                    <label for="first-name">Nombres</label>
+                    <input type="text" class="login-input" id="first-name" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
+                        title="Caracter no permitido" required>
+                </div>
+
+                <div class="flex-column">
+                    <label for="last-name">Apellidos</label>
+                    <input type="text" class="login-input" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" id="last-name" required>
+                </div>
+
+                <div class="flex-column">
+                    <label for="doc-type">Elige tu tipo de documento</label>
+                    <select id="doc-type" name="doc-type" required>
+                        <option value="">Seleccione un tipo de documento...</option>
+                        <option value="50">Cédula de cuidadanía</option>
+                        <option value="20">Tarjeta de identidad</option>
+                        <option value="60">Cédula de extranjería</option>
+                        <option value="1">Pasaporte</option>
+                    </select>
+                </div>
+
+                <div class="flex-column">
+                    <label for="doc-number">Numero de documento</label>
+                    <input type="number" class="login-input" id="doc-number">
+                </div>
+
+                <div class="flex-column">
+                    <label for="email">email</label>
+                    <input type="email" class="login-input" id="email" placeholder="Ingresa tu correo electronico">
+                </div>
+
+                <div class="flex-column">
+                    <label for="direccion">Direccion</label>
+                    <input type="direccion" class="login-input" id="direccion" placeholder="Ingresa tu direccion">
+                </div>
+
+                <div class="flex-column">
+                    <label for="Telefono">Teléfono</label>
+                    <input type="number" class="login-input" id="Telefono" placeholder="Ingresa tu numero de Telefono">
+                </div>
+
+                <div class="flex-column">
+                    <label for="rol">Rol</label>
+                    <select id="rol" name="rol">
+                        <option value="" disabled selected>Seleccione su rol...</option>
+                        <option value="Cliente">Cliente</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="Domiciliario">Domiciliario</option>
+                    </select>
+                </div>
+            </div>
+            <div class="container-btn-submit">
+                <button type="submit" class="login-button">Guardar</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        © 2025  Empanadas la Económica — Todos los derechos reservados
+    </footer>
+</body>
+
+</html>

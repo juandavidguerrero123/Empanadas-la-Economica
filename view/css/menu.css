@@ -1,0 +1,58 @@
+
+.main-layout{
+    padding: 5rem;
+}
+
+.main-container-menu{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.card-menu{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid #b8b8b8;
+    border-radius: 6px;
+}
+
+.card-menu img{
+    height: 100%;
+    width: 35%;
+    object-fit: cover;
+}
+
+.space-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+.description-menu{
+    padding: 30px;
+}
+
+.btn-comprar{
+    background-color: var(--marron);
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: all ease 0.2s;
+    padding: 5px;
+}
+
+.btn-comprar:hover{
+    background-color: #fff;
+    transform: scale(1.02);
+    color:  var(--marron);
+    cursor: pointer;
+}
+footer {
+    background-color: var(--naranja);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 300px;
+}
+
+
