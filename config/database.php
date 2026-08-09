@@ -5,12 +5,12 @@ $usuario = "root";
 $password = "";
 $base_datos = "empanadas_economica";
 
-$conexion = new mysqli($host, $usuario, $password, $base_datos);
+try {$conexion = new PDO("mysql:host=$host;dbname=$base_datos;charset=utf8mb4",$usuario,$password);
 
-if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+} catch (PDOException $e) {
+    die("Error de conexión: " . $e->getMessage());
 }
-
-$conexion->set_charset("utf8mb4");
 
 ?>

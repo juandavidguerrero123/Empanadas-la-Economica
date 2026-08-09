@@ -10,6 +10,30 @@
     <link href="../css/registrate.css" rel="stylesheet">
 </head>
 
+<div id="mensaje-alerta" class="mensaje-alerta"></div>
+
+<script>
+    const parametros = new URLSearchParams(window.location.search);
+    const error = parametros.get("error");
+    const alerta = document.getElementById("mensaje-alerta");
+
+    const mensajes = {
+        campos: "⚠️ Todos los campos obligatorios deben estar completos.",
+        correo: "⚠️ El correo electrónico no es válido.",
+        password: "⚠️ La contraseña debe tener al menos 6 caracteres.",
+        duplicado: "⚠️ El correo o el número de documento ya están registrados."
+    };
+
+    if (error && mensajes[error]) {
+        alerta.textContent = mensajes[error];
+        alerta.classList.add("mostrar");
+
+        setTimeout(() => {
+            alerta.classList.remove("mostrar");
+        }, 4000);
+    }
+</script>
+
 <body class="body">
     <header>
         <nav>

@@ -10,6 +10,32 @@
     <link href="../css/login.css" rel="stylesheet">
 </head>
 
+<div id="mensaje-alerta" class="mensaje-alerta"></div>
+
+<script>
+    const parametros = new URLSearchParams(window.location.search);
+    const error = parametros.get("error");
+
+    const alerta = document.getElementById("mensaje-alerta");
+
+    const mensajes = {
+        campos: "⚠️ El correo y la contraseña son obligatorios.",
+        correo: "⚠️ El correo electrónico no es válido.",
+        credenciales: "⚠️ El correo o la contraseña son incorrectos.",
+        inactivo: "⚠️ El usuario se encuentra inactivo.",
+        acceso: "⚠️ Acceso no permitido."
+    };
+
+    if (error && mensajes[error]) {
+        alerta.textContent = mensajes[error];
+        alerta.classList.add("mostrar");
+
+        setTimeout(() => {
+            alerta.classList.remove("mostrar");
+        }, 4000);
+    }
+</script>
+
 <body class="body">
     <header>
         <nav>
@@ -33,22 +59,35 @@
     </header>
 
     <main class="items-center">
-        <form action="menu.html" class="flex-column">
-            <div class="flex-column">
-                <label for="username">Usuario</label>
-                <input type="email" class="login-input" id="username" placeholder="ejemplo@mail.com">
-            </div>
+    <form action="../../controller/login.php" method="POST" class="flex-column">
 
-            <div class="flex-column">
-                <label for="password">Contraseña</label>
-                <input type="password" class="login-input" id="password" placeholder="Ingresa tu contraseña">
-            </div>
+        <div class="flex-column">
+            <label for="username">Usuario</label>
+            <input type="email"
+                class="login-input"
+                id="username"
+                name="correo"
+                placeholder="ejemplo@mail.com"
+                required>
+        </div>
 
-            <button type="submit" class="login-button">Iniciar sesión</button>
-        </form>
+        <div class="flex-column">
+            <label for="password">Contraseña</label>
+            <input type="password"
+                class="login-input"
+                id="password"
+                name="password"
+                placeholder="Ingresa tu contraseña"
+                required>
+        </div>
+
+        <button type="submit" class="login-button">Iniciar sesión</button>
+
+    </form>
     </main>
+
     <footer>
-        © 2025  Empanadas la Económica — Todos los derechos reservados
+        © 2025 Empanadas la Económica — Todos los derechos reservados
     </footer>
 </body>
 
