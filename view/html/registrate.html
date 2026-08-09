@@ -33,22 +33,25 @@
     </header>
 
     <main class="items-center">
-        <form action="sesion.html">
+        <form action="../../controller/registro.php" method="POST">
             <div class="formulario-registro">
                 <div class="flex-column">
                     <label for="first-name">Nombres</label>
-                    <input type="text" class="login-input" id="first-name" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
+                    <input type="text" class="login-input" id="first-name" name="nombre"
+                        pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
                         title="Caracter no permitido" required>
                 </div>
 
                 <div class="flex-column">
                     <label for="last-name">Apellidos</label>
-                    <input type="text" class="login-input" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" id="last-name" required>
+                    <input type="text" class="login-input" id="last-name" name="apellido"
+                        pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+"
+                        title="Caracter no permitido" required>
                 </div>
 
                 <div class="flex-column">
                     <label for="doc-type">Elige tu tipo de documento</label>
-                    <select id="doc-type" name="doc-type" required>
+                    <select id="doc-type" name="tipo_documento" required>
                         <option value="">Seleccione un tipo de documento...</option>
                         <option value="50">Cédula de cuidadanía</option>
                         <option value="20">Tarjeta de identidad</option>
@@ -59,33 +62,67 @@
 
                 <div class="flex-column">
                     <label for="doc-number">Numero de documento</label>
-                    <input type="number" class="login-input" id="doc-number">
+                    <input type="text" class="login-input" id="doc-number"
+                        name="numero_documento"
+                        inputmode="numeric"
+                        required>
                 </div>
 
                 <div class="flex-column">
                     <label for="email">email</label>
-                    <input type="email" class="login-input" id="email" placeholder="Ingresa tu correo electronico">
+                    <input type="email" class="login-input" id="email"
+                        name="correo"
+                        placeholder="Ingresa tu correo electronico"
+                        required>
+                </div>
+                
+                <div class="flex-column">
+                    <label for="password">Contraseña</label>
+                    <input type="password" class="login-input" id="password"
+                        name="password"
+                        placeholder="Ingresa tu contraseña"
+                        required>
                 </div>
 
                 <div class="flex-column">
                     <label for="direccion">Direccion</label>
-                    <input type="direccion" class="login-input" id="direccion" placeholder="Ingresa tu direccion">
+                    <input type="text" class="login-input" id="direccion"
+                        name="direccion"
+                        placeholder="Ingresa tu direccion"
+                        required>
+                </div>
+
+                <div class="flex-column">
+                    <label for="barrio">Barrio</label>
+                    <input type="text" class="login-input" id="barrio"
+                        name="barrio"
+                        placeholder="Ingresa tu barrio"
+                        required>
+                </div>
+
+                <div class="flex-column">
+                    <label for="ciudad">Ciudad</label>
+                    <input type="text" class="login-input" id="ciudad"
+                        name="ciudad"
+                        placeholder="Ingresa tu ciudad"
+                        required>
+                </div>
+
+                <div class="flex-column">
+                    <label for="referencia">Referencia</label>
+                    <input type="text" class="login-input" id="referencia"
+                        name="referencia"
+                        placeholder="Ej: Casa de rejas blancas">
                 </div>
 
                 <div class="flex-column">
                     <label for="Telefono">Teléfono</label>
-                    <input type="number" class="login-input" id="Telefono" placeholder="Ingresa tu numero de Telefono">
+                    <input type="tel" class="login-input" id="Telefono"
+                        name="telefono"
+                        placeholder="Ingresa tu numero de Telefono"
+                        required>
                 </div>
-
-                <div class="flex-column">
-                    <label for="rol">Rol</label>
-                    <select id="rol" name="rol">
-                        <option value="" disabled selected>Seleccione su rol...</option>
-                        <option value="Cliente">Cliente</option>
-                        <option value="Administrador">Administrador</option>
-                        <option value="Domiciliario">Domiciliario</option>
-                    </select>
-                </div>
+                
             </div>
             <div class="container-btn-submit">
                 <button type="submit" class="login-button">Guardar</button>
