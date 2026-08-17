@@ -64,7 +64,7 @@ $_SESSION["apellido"] = $usuario["apellido"];
 $_SESSION["correo"] = $usuario["correo"];
 
 /* Redirigir al menú */
-header("Location: ../view/html/menu.html");
+header("Location: ../view/html/menu.php");
 exit;
 
 ?>
