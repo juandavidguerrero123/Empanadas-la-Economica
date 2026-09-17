@@ -63,8 +63,25 @@ $_SESSION["nombre"] = $usuario["nombre"];
 $_SESSION["apellido"] = $usuario["apellido"];
 $_SESSION["correo"] = $usuario["correo"];
 
-/* Redirigir al menú */
-header("Location: ../view/html/menu.php");
-exit;
+/* Redirigir según el rol */
+if ($usuario["rol_id"] == 1) {
 
-?>
+    header("Location: ../view/admin/index.php");
+    exit;
+
+} elseif ($usuario["rol_id"] == 2) {
+
+    header("Location: ../view/html/menu.php");
+    exit;
+
+} elseif ($usuario["rol_id"] == 3) {
+
+    header("Location: ../view/html/menu.php");
+    exit;
+
+} else {
+
+    session_destroy();
+    header("Location: ../view/html/sesion.html?error=rol");
+    exit;
+}

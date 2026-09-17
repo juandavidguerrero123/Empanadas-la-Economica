@@ -1,0 +1,497 @@
+:root {
+    --naranja: #e27c1e;
+    --rojo: #C0392B;
+    --blanco: #fff5e1;
+    --marron: #4b2e05;
+    --naranja-transparente: rgba(226, 124, 30, 0.5);
+}
+
+/* Página */
+
+body {
+    margin: 0;
+    background-color: var(--blanco);
+    font-family: Arial, sans-serif;
+    color: #3B1F0E;
+}
+
+/* Encabezado */
+
+header {
+    background-color: var(--naranja);
+    padding: 15px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.bloque {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.bloque img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+}
+
+.text-logo {
+    text-align: center;
+}
+
+.text-logo h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.text-logo p {
+    margin: 0;
+}
+
+/* Identificación del administrador */
+
+.usuario-admin {
+    color: var(--marron);
+    font-weight: bold;
+    text-align: right;
+}
+
+.usuario-admin span {
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* Contenido */
+
+.contenedor-admin {
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.titulo-admin {
+    text-align: center;
+    color: var(--marron);
+    margin-bottom: 10px;
+}
+
+.subtitulo-admin {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* Tarjetas */
+
+.panel-admin {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.tarjeta-admin {
+    background-color: var(--naranja-transparente);
+    border-radius: 14px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-admin:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(75, 46, 5, 0.25);
+}
+
+.tarjeta-admin h2 {
+    color: var(--marron);
+    margin-top: 0;
+}
+
+.tarjeta-admin p {
+    text-align: center;
+    min-height: 50px;
+}
+
+/* Botones */
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--marron);
+    color: var(--blanco);
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--rojo);
+}
+
+.btn-cerrar {
+    display: inline-block;
+    background-color: var(--marron);
+    color: var(--blanco);
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 35px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cerrar:hover {
+    background-color: var(--rojo);
+}
+
+/* Pie de página */
+
+footer {
+    background-color: var(--naranja);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 80px;
+}
+
+/* Adaptación para pantallas pequeñas */
+
+@media (max-width: 900px) {
+
+    .panel-admin {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    .usuario-admin {
+        text-align: center;
+    }
+
+    .contenedor-admin {
+        padding: 25px;
+    }
+}
+/* ============================= */
+/* MÓDULO DE PRODUCTOS */
+/* ============================= */
+
+.admin-container {
+    min-height: 100vh;
+}
+
+.admin-header {
+    background-color: var(--naranja);
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.admin-logo img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.admin-header h1 {
+    margin: 0;
+    color: var(--marron);
+}
+
+.admin-header p {
+    margin: 5px 0 0;
+    color: var(--marron);
+}
+
+.admin-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 35px 40px;
+}
+
+.admin-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 20px;
+}
+
+.admin-section-header h2 {
+    color: var(--marron);
+    margin: 0;
+}
+
+.btn-admin {
+    background-color: var(--marron);
+    color: var(--blanco);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-admin:hover {
+    background-color: var(--rojo);
+}
+
+/* Tabla */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.productos-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.productos-table th {
+    background-color: var(--marron);
+    color: var(--blanco);
+    padding: 12px;
+    text-align: center;
+}
+
+.productos-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.productos-table tr:hover {
+    background-color: #fff3df;
+}
+
+/* Imágenes de productos */
+
+.producto-imagen {
+    width: 90px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Estados */
+
+.estado-activo,
+.estado-inactivo {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.estado-activo {
+    background-color: #d5f5e3;
+    color: #196f3d;
+}
+
+.estado-inactivo {
+    background-color: #f5d5d5;
+    color: var(--rojo);
+}
+
+/* Botones de acciones */
+
+.btn-editar,
+.btn-eliminar {
+    border: none;
+    padding: 7px 12px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.btn-editar {
+    background-color: var(--naranja);
+    text-decoration: none;
+}
+
+.btn-eliminar {
+    background-color: var(--rojo);
+}
+
+.btn-editar:hover,
+.btn-eliminar:hover {
+    opacity: 0.85;
+}
+
+/* Adaptación del módulo de productos */
+
+@media (max-width: 900px) {
+
+    .admin-header {
+        padding: 20px;
+    }
+
+    .admin-content {
+        padding: 25px 20px;
+    }
+
+    .admin-section-header {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .productos-table {
+        min-width: 900px;
+    }
+}
+/* ============================= */
+/* FORMULARIO DE PRODUCTOS */
+/* ============================= */
+
+.formulario-producto {
+    max-width: 750px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(75, 46, 5, 0.15);
+}
+
+.formulario-producto h2 {
+    color: var(--marron);
+    margin-top: 0;
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--naranja);
+    text-align: center;
+}
+
+.campo-formulario {
+    margin-bottom: 20px;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--marron);
+    font-weight: bold;
+}
+
+.campo-formulario input,
+.campo-formulario textarea,
+.campo-formulario select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+.campo-formulario textarea {
+    resize: vertical;
+}
+
+.campo-formulario input:focus,
+.campo-formulario textarea:focus,
+.campo-formulario select:focus {
+    outline: none;
+    border-color: var(--naranja);
+    box-shadow: 0 0 0 2px rgba(226, 124, 30, 0.15);
+}
+
+.botones-formulario {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn-cancelar {
+    display: inline-block;
+    background-color: #777;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cancelar:hover {
+    background-color: var(--rojo);
+}
+
+/* Adaptación del formulario para pantallas pequeñas */
+
+@media (max-width: 600px) {
+
+    .formulario-producto {
+        padding: 25px 20px;
+    }
+
+    .botones-formulario {
+        flex-direction: column;
+    }
+
+    .botones-formulario .btn-admin,
+    .botones-formulario .btn-cancelar {
+        text-align: center;
+    }
+}
+/* Imagen actual en formulario de edición */
+
+.imagen-editar {
+    display: block;
+    width: 180px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px 0 20px;
+}
+.titulo-formulario {
+    max-width: 750px;
+    margin: 0 auto 20px;
+    color: var(--marron);
+    text-align: center;
+}
+.formulario-producto form {
+    text-align: left;
+}
+.formulario-producto form {
+    width: 100%;
+}
+
+.formulario-producto .campo-formulario {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.formulario-producto .campo-formulario input,
+.formulario-producto .campo-formulario textarea,
+.formulario-producto .campo-formulario select {
+    width: 100%;
+    box-sizing: border-box;
+}
