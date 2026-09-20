@@ -55,6 +55,67 @@ nav{
   background-color: var(--rojo);
 }
 
+/* Botones y páginas públicas */
+
+.btn-primary,
+.btn-secondary,
+.login-button,
+.btn-comprar,
+.btn-carrito {
+  box-shadow: 0 4px 0 rgba(75, 46, 5, 0.55), 0 8px 16px rgba(75, 46, 5, 0.18);
+  display: inline-block;
+  transform: translateY(0);
+  transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.login-button:hover,
+.btn-comprar:hover,
+.btn-carrito:hover { transform: translateY(-2px); }
+
+.btn-primary:active,
+.btn-secondary:active,
+.login-button:active,
+.btn-comprar:active,
+.btn-carrito:active { box-shadow: 0 1px 0 rgba(75, 46, 5, 0.6); transform: translateY(3px); }
+
+.btn-secondary { background: #fff0cf; border: 1px solid rgba(75, 46, 5, .25); }
+.btn-secondary:hover { background: #fff; color: var(--rojo); }
+.btn-carrito { background: var(--marron); border-radius: 50px; color: var(--blanco); font-weight: bold; padding: 10px 16px; text-decoration: none; }
+.btn-carrito span { background: var(--naranja); border-radius: 50%; color: var(--marron); display: inline-block; margin-left: 4px; min-width: 18px; text-align: center; }
+
+.inicio-principal,
+.nosotros-principal,
+.contacto-principal { margin: 0 auto; max-width: 1180px; padding: 56px 24px; }
+
+.inicio-presentacion { align-items: center; background: linear-gradient(120deg, #fff 0%, #ffe4b5 100%); border-radius: 24px; box-shadow: 0 12px 30px rgba(75,46,5,.12); display: grid; gap: 36px; grid-template-columns: 1.1fr .9fr; overflow: hidden; padding: 42px; }
+.inicio-texto h2, .encabezado-pagina h2 { color: var(--marron); font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.1; margin: 14px 0; }
+.inicio-texto p, .encabezado-pagina p { color: #5d4120; font-size: 1.1rem; line-height: 1.7; text-align: left; }
+.etiqueta-inicio, .encabezado-pagina span, .contacto-intro > span { color: var(--rojo); font-size: .9rem; font-weight: bold; letter-spacing: .08em; text-transform: uppercase; }
+.inicio-acciones { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 24px; }
+.imagen-principal { border-radius: 18px; box-shadow: 12px 12px 0 var(--naranja); height: 340px; object-fit: cover; width: 100%; }
+.inicio-destacados { display: grid; gap: 20px; grid-template-columns: repeat(3, 1fr); margin: 38px 0; }
+.inicio-destacados article, .proposito-nosotros article { background: #fff; border-radius: 16px; box-shadow: 0 8px 18px rgba(75,46,5,.1); padding: 26px; text-align: center; }
+.inicio-destacados span { font-size: 2rem; }
+.inicio-destacados h3, .proposito-nosotros h2 { color: var(--marron); margin-bottom: 8px; }
+.inicio-destacados p, .proposito-nosotros p { color: #5d4120; margin: 0; text-align: center; }
+.inicio-local, .historia-nosotros { align-items: center; display: grid; gap: 38px; grid-template-columns: 1fr 1fr; margin-top: 42px; }
+.inicio-local img, .historia-nosotros img { border-radius: 18px; box-shadow: -10px 10px 0 var(--naranja); max-height: 340px; object-fit: cover; width: 100%; }
+.inicio-local h2, .historia-nosotros h2, .contacto-intro h2 { color: var(--marron); font-size: 2rem; }
+.inicio-local p, .historia-nosotros p, .contacto-intro p { color: #5d4120; line-height: 1.7; }
+
+.encabezado-pagina { margin: 0 auto 38px; max-width: 760px; text-align: center; }
+.encabezado-pagina p { text-align: center; }
+.historia-nosotros > div { background: #fff; border-radius: 16px; box-shadow: 0 8px 18px rgba(75,46,5,.1); padding: 30px; }
+.proposito-nosotros { display: grid; gap: 22px; grid-template-columns: 1fr 1fr; margin: 42px 0; }
+.proposito-nosotros article:first-child { border-top: 6px solid var(--naranja); }
+.proposito-nosotros article:last-child { border-top: 6px solid var(--rojo); }
+.visitanos { background: var(--marron); border-radius: 18px; color: var(--blanco); display: grid; gap: 24px; grid-template-columns: .65fr 1.35fr; padding: 26px; }
+.visitanos h2 { margin: 0; }.visitanos p { text-align: left; }.visitanos iframe { border: 0; border-radius: 12px; min-height: 300px; width: 100%; }
+
+@media (max-width: 800px) { .inicio-presentacion, .inicio-local, .historia-nosotros, .visitanos { grid-template-columns: 1fr; } .inicio-destacados, .proposito-nosotros { grid-template-columns: 1fr; } .inicio-presentacion { padding: 28px; } }
+
 .bloque {
   display: flex;
   align-items: center;
@@ -230,4 +291,12 @@ footer {
 .mensaje-alerta.mostrar {
     opacity: 1;
     transform: translateX(0);
+}
+
+footer { margin-top: 0; }
+
+@media (max-width: 900px) {
+  nav { align-items: center; flex-direction: column; gap: 14px; }
+  .bloque { gap: 10px; }
+  .btn-primary, .btn-secondary, .btn-carrito { padding: 9px 13px; }
 }

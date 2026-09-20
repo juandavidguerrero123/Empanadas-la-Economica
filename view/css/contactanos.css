@@ -73,3 +73,16 @@ footer {
     padding: 15px;
     margin-top: 430px;
 }
+
+.contacto-principal { align-items: center; display: grid; gap: 50px; grid-template-columns: .8fr 1.2fr; margin: 0 auto; max-width: 1050px; min-height: 560px; padding: 55px 24px; }
+.contacto-intro { background: var(--marron); border-radius: 20px; box-shadow: 10px 10px 0 var(--naranja); color: var(--blanco); padding: 38px; }
+.contacto-intro h2 { font-size: 2.4rem; margin: 12px 0; }.contacto-intro p { color: #fff0d5; line-height: 1.7; }.contacto-dato { border-top: 1px solid rgba(255,255,255,.35); margin-top: 28px; padding-top: 20px; }
+.form-contact { background: #fffaf0; border: 1px solid #ebc78f; box-shadow: 0 10px 24px rgba(75,46,5,.14); margin: 0; max-width: none; padding: 34px; width: auto; }
+.form-contact label { color: var(--marron); font-weight: bold; }.form-contact input, .form-contact textarea { border: 1px solid #d6a55e; border-radius: 8px; padding: 11px; }.form-contact textarea { font-family: Arial, sans-serif; resize: vertical; }
+.form-contact .login-button { border: none; padding: 11px 22px; width: 60%; }
+@media (max-width: 800px) { .contacto-principal { grid-template-columns: 1fr; }.form-contact .login-button { width: 100%; } }
+
+.login-button { box-shadow: 0 4px 0 rgba(75, 46, 5, .55), 0 8px 16px rgba(75, 46, 5, .18); transform: translateY(0); }
+.login-button:hover { background-color: var(--rojo); box-shadow: 0 6px 18px rgba(75, 46, 5, .22); transform: translateY(-2px); }
+.login-button:active { box-shadow: 0 1px 0 rgba(75, 46, 5, .55); transform: translateY(3px); }
+footer { margin-top: 0; }

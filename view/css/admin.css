@@ -496,6 +496,21 @@ footer {
     box-sizing: border-box;
 }
 
+.usuario-admin a,
+.admin-header a {
+    color: var(--marron);
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 4px;
+}
+
+.nota-perfil {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+}
+
 /* MÓDULO DE CLIENTES */
 
 .cliente-detalle {
@@ -537,12 +552,40 @@ footer {
     margin-bottom: 45px;
 }
 
+.entregas-seccion { margin-bottom: 45px; }
+.entregas-seccion h2 { color: var(--marron); }
+.entregas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px; }
+.tarjeta-entrega { background-color: white; border-left: 5px solid var(--naranja); border-radius: 10px; box-shadow: 0 3px 12px rgba(75, 46, 5, 0.15); padding: 22px; }
+.tarjeta-entrega h3 { color: var(--marron); margin-top: 0; }
+.tarjeta-entrega form { margin-top: 20px; }
+.cerrar-entregas { text-align: center; }
+
+/* CONTROL DE PEDIDOS */
+
+.pedidos-seccion { margin-bottom: 45px; }
+.pedidos-seccion h2 { color: var(--marron); }
+.contador-pedidos { background-color: var(--naranja); border-radius: 50%; color: var(--marron); display: inline-block; font-size: 15px; min-width: 24px; padding: 4px; text-align: center; }
+.estado-pedido { border-radius: 20px; display: inline-block; font-size: 13px; font-weight: bold; padding: 5px 10px; }
+.pedido-pendiente { background-color: #fff3cd; color: #856404; }
+.pedido-camino { background-color: #d6eaf8; color: #1b4f72; }
+.pedido-entregado { background-color: #d5f5e3; color: #196f3d; }
+
 .buscador-clientes {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 25px;
 }
+
+/* Relieve para las acciones del panel */
+.btn-primary, .btn-admin, .btn-cancelar, .btn-editar, .btn-eliminar {
+    box-shadow: 0 4px 0 rgba(75, 46, 5, .48), 0 7px 14px rgba(75, 46, 5, .16);
+    transform: translateY(0);
+    transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.btn-primary:hover, .btn-admin:hover, .btn-cancelar:hover, .btn-editar:hover, .btn-eliminar:hover { transform: translateY(-2px); }
+.btn-primary:active, .btn-admin:active, .btn-cancelar:active, .btn-editar:active, .btn-eliminar:active { box-shadow: 0 1px 0 rgba(75, 46, 5, .55); transform: translateY(3px); }
 
 .buscador-clientes label {
     color: var(--marron);

@@ -76,7 +76,7 @@ if ($usuario["rol_id"] == 1) {
 
 } elseif ($usuario["rol_id"] == 3) {
 
-    header("Location: ../view/html/menu.php");
+    header("Location: ../controller/domiciliario.php");
     exit;
 
 } else {

@@ -67,7 +67,7 @@ try {
     }
 
     $pedido = $conexion->prepare("INSERT INTO pedidos (usuario_id, fecha_pedido, estado, total, observaciones, domicilio_id) VALUES (?, CURDATE(), ?, ?, ?, ?)");
-    $pedido->execute([$_SESSION["usuario_id"], "En proceso de entrega", $total, "Método de pago: " . $metodoPago, $domicilioId]);
+    $pedido->execute([$_SESSION["usuario_id"], "Pendiente de asignación", $total, "Método de pago: " . $metodoPago, $domicilioId]);
 
     $pedidoId = (int) $conexion->lastInsertId();
     $detalle = $conexion->prepare("INSERT INTO detalle_pedido (pedido_id, producto_id, cantidad, precio_unitario, subtotal, observaciones) VALUES (?, ?, ?, ?, ?, NULL)");

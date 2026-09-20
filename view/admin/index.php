@@ -66,6 +66,8 @@ if ($_SESSION["rol_id"] != 1) {
             <?= htmlspecialchars($_SESSION["nombre"]) ?>
             <?= htmlspecialchars($_SESSION["apellido"]) ?>
 
+            <a href="/controller/perfil.php">Mi perfil</a>
+
             <span>
                 Administrador
             </span>
@@ -140,6 +142,24 @@ if ($_SESSION["rol_id"] != 1) {
 
             <a href="/controller/personal.php" class="btn-primary">
                 Administrar personal
+            </a>
+
+        </article>
+
+
+        <!-- PEDIDOS -->
+
+        <article class="tarjeta-admin">
+
+            <h2>📦 Pedidos</h2>
+
+            <p>
+                Consultar los pedidos pendientes,
+                en camino y entregados.
+            </p>
+
+            <a href="/controller/pedidos.php" class="btn-primary">
+                Ver pedidos
             </a>
 
         </article>
