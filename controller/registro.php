@@ -3,7 +3,8 @@
 require_once "../config/database.php";
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    die("Acceso no permitido.");
+    header("Location: ../view/html/registrate.html?error=acceso");
+    exit;
 }
 
 $nombre = trim($_POST["nombre"] ?? "");

@@ -4,7 +4,8 @@ require_once "../../../config/database.php";
 require_once "../../../model/Producto.php";
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    die("Producto no válido.");
+    header('Location: /controller/productos.php?mensaje=' . urlencode('El producto seleccionado no es válido.'));
+    exit;
 }
 
 $id = (int) $_GET['id'];
@@ -14,7 +15,8 @@ $productoModelo = new Producto($conexion);
 $producto = $productoModelo->obtenerPorId($id);
 
 if (!$producto) {
-    die("El producto no existe.");
+    header('Location: /controller/productos.php?mensaje=' . urlencode('El producto seleccionado no existe.'));
+    exit;
 }
 
 ?>

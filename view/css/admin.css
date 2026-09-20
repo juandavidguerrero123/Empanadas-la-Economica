@@ -495,3 +495,72 @@ footer {
     width: 100%;
     box-sizing: border-box;
 }
+
+/* MÓDULO DE CLIENTES */
+
+.cliente-detalle {
+    margin-bottom: 30px;
+}
+
+.datos-cliente p,
+.tarjeta-direccion p {
+    margin: 10px 0;
+}
+
+.direcciones-cliente {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.direcciones-cliente h2 {
+    color: var(--marron);
+    text-align: center;
+}
+
+.tarjeta-direccion {
+    background-color: white;
+    border-left: 5px solid var(--naranja);
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(75, 46, 5, 0.15);
+    margin-bottom: 18px;
+    padding: 20px;
+}
+
+.mensaje-vacio {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.personal-seccion {
+    margin-bottom: 45px;
+}
+
+.buscador-clientes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.buscador-clientes label {
+    color: var(--marron);
+    font-weight: bold;
+}
+
+.buscador-clientes input {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    font-family: Arial, sans-serif;
+}
+
+@media (max-width: 600px) {
+    .buscador-clientes {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}

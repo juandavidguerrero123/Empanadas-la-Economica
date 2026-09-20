@@ -24,6 +24,7 @@ $error = $_GET["error"] ?? "";
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/menu.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="../../assets/js/app.js" defer></script>
 </head>
 <body class="body">
     <header>
@@ -39,8 +40,8 @@ $error = $_GET["error"] ?? "";
         </nav>
     </header>
     <main class="main-layout">
-        <?php if ($mensaje): ?><div class="mensaje-alerta exito"><?= htmlspecialchars($mensaje) ?></div><?php endif; ?>
-        <?php if ($error): ?><div class="mensaje-alerta error">No fue posible agregar el producto. Verifica la cantidad e inténtalo otra vez.</div><?php endif; ?>
+        <?php if ($mensaje): ?><div hidden data-swal="success" data-swal-titulo="Operación exitosa" data-parametros-url="agregado,compra,error"><?= htmlspecialchars($mensaje) ?></div><?php endif; ?>
+        <?php if ($error): ?><div hidden data-swal="error" data-swal-titulo="No fue posible agregar el producto" data-parametros-url="agregado,compra,error">Verifica la cantidad e inténtalo otra vez.</div><?php endif; ?>
         <?php if (!$productos): ?>
             <div class="estado-vacio"><p>Aún no hay productos disponibles. Importa el archivo <code>database/productos_iniciales.sql</code>.</p></div>
         <?php endif; ?>
@@ -63,23 +64,5 @@ $error = $_GET["error"] ?? "";
         </section>
     </main>
     <footer>© 2025 Empanadas la Económica — Todos los derechos reservados</footer>
-<script>
-window.addEventListener("load", function () {
-    const alerta = document.querySelector(".mensaje-alerta");
-
-    if (alerta) {
-        setTimeout(function () {
-            alerta.remove();
-
-            const url = new URL(window.location.href);
-            url.searchParams.delete("agregado");
-            url.searchParams.delete("compra");
-            url.searchParams.delete("error");
-
-            window.history.replaceState({}, document.title, url.pathname);
-        }, 4000);
-    }
-});
-</script>
 </body>
 </html>

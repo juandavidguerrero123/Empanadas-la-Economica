@@ -8,6 +8,7 @@
     <title>Productos - Administrador</title>
 
     <link rel="stylesheet" href="/view/css/admin.css">
+    <script src="/assets/js/app.js" defer></script>
 </head>
 
 <body>
@@ -30,6 +31,16 @@
         </header>
 
         <main class="admin-content">
+
+            <?php if (isset($_GET['mensaje'])): ?>
+                <div
+                    hidden
+                    data-swal="error"
+                    data-swal-titulo="No fue posible completar la operación"
+                    data-parametros-url="mensaje">
+                    <?= htmlspecialchars($_GET['mensaje']) ?>
+                </div>
+            <?php endif; ?>
 
             <div class="admin-section-header">
 
@@ -147,7 +158,7 @@
                                             action="/controller/productos.php"
                                             method="POST"
                                             style="display: inline;"
-                                            onsubmit="return confirm('¿Está seguro de que desea eliminar este producto?');">
+                                            data-confirmacion="¿Está seguro de que desea eliminar este producto?">
 
                                             <input
                                                 type="hidden"

@@ -21,7 +21,7 @@ if ($carrito) {
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Carrito | Empanadas La Económica</title><link href="../css/style.css" rel="stylesheet"><link href="../css/menu.css" rel="stylesheet">
+        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Carrito | Empanadas La Económica</title><link href="../css/style.css" rel="stylesheet"><link href="../css/menu.css" rel="stylesheet"><script src="../../assets/js/app.js" defer></script>
     </head>
     <body class="body">
         <header><nav>
@@ -37,7 +37,7 @@ if ($carrito) {
         <main class="main-layout contenido-carrito">
             <h2 class="titulo-seccion">Tu carrito</h2>
             <?php if (isset($_GET["mensaje"])): ?> 
-                <div class="mensaje-alerta exito"><?= htmlspecialchars($_GET["mensaje"]) ?>
+                <div hidden data-swal="success" data-swal-titulo="Carrito actualizado" data-parametros-url="mensaje"><?= htmlspecialchars($_GET["mensaje"]) ?>
                 </div>
             <?php endif; ?>
             <?php if (!$items): ?>
@@ -47,44 +47,24 @@ if ($carrito) {
                 </div>
                 <?php else: ?>
                     <form action="../../controller/carrito.php" method="POST">
-                        <input type="hidden" name="accion" value="actualizar">
                             <table class="tabla-carrito">
                                 <thead><tr><th>Producto</th><th>Precio</th><th>Cantidad</th><th>Subtotal</th><th></th></tr>
                                 </thead>
                                 <tbody>
                                     <?php foreach ($items as $item): ?><tr><td><?= htmlspecialchars($item["nombre"]) ?></td><td>$<?= number_format($item["precio"], 0, ",", ".") ?></td><td>
                                         <input type="number" min="0" name="cantidades[<?= (int)$item["id"] ?>]" value="<?= $item["cantidad"] ?>"></td><td>$<?= number_format($item["subtotal"], 0, ",", ".") ?></td><td>
-                                        <button class="boton-enlace" name="accion" value="eliminar" formaction="../../controller/carrito.php" formmethod="POST" type="submit" onclick="this.form.producto_id.value=<?= (int)$item['id'] ?>">Eliminar</button>                                        </td></tr>
+                                        <button class="boton-enlace" name="producto_id" value="<?= (int)$item['id'] ?>" type="submit">Eliminar</button>                                        </td></tr>
                                     <?php endforeach; ?>
                                     </tbody>
                             </table>
-                        <input type="hidden" name="producto_id" value="">
                         <div class="resumen-carrito">
                             <strong>Total: $<?= number_format($total, 0, ",", ".") ?></strong>
-                            <button class="btn-secondary" type="submit">Actualizar carrito</button>
+                            <button class="btn-secondary" type="submit" name="accion" value="actualizar">Actualizar carrito</button>
                             <a class="btn-comprar enlace-boton" href="confirmar_compra.php">Continuar a confirmar compra</a>
                         </div>
                     </form>
             <?php endif; ?>
         </main>
         <footer>© 2025 Empanadas la Económica — Todos los derechos reservados</footer>
-    <script>
-window.addEventListener("load", function () {
-    const alerta = document.querySelector(".mensaje-alerta");
-
-    if (alerta) {
-        setTimeout(function () {
-            alerta.remove();
-
-            const url = new URL(window.location.href);
-            url.searchParams.delete("agregado");
-            url.searchParams.delete("compra");
-            url.searchParams.delete("error");
-
-            window.history.replaceState({}, document.title, url.pathname);
-        }, 4000);
-    }
-});
-</script>
     </body>
 </html>

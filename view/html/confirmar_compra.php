@@ -39,12 +39,13 @@ $domicilios = $domicilios->fetchAll(PDO::FETCH_ASSOC);
     <title>Confirmar compra | Empanadas La Económica</title>
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/menu.css" rel="stylesheet">
+    <script src="../../assets/js/app.js" defer></script>
 </head>
 <body class="body">
     <header><nav><div class="bloque"><img src="../../assets/imagenes/Logo.jpg" alt="Logo"><div class="text-logo"><h1>Empanadas La Económica</h1><p>Sabor casero, precio justo.</p></div></div><div class="bloque"><a href="carrito.php" class="btn-secondary">Volver al carrito</a></div></nav></header>
     <main class="main-layout contenido-carrito">
         <h2 class="titulo-seccion">Confirma tu compra</h2>
-        <?php if (isset($_GET["error"])): ?><div class="mensaje-alerta error"><?= htmlspecialchars($_GET["error"]) ?></div><?php endif; ?>
+        <?php if (isset($_GET["error"])): ?><div hidden data-swal="error" data-swal-titulo="No fue posible finalizar la compra" data-parametros-url="error"><?= htmlspecialchars($_GET["error"]) ?></div><?php endif; ?>
         <?php if (!$productos): ?><div class="estado-vacio"><p>Los productos del carrito ya no están disponibles.</p><a href="menu.php" class="btn-comprar enlace-boton">Volver al menú</a></div>
         <?php elseif (!$domicilios): ?><div class="estado-vacio"><p>No tienes una dirección activa registrada. Debes registrar una antes de finalizar la compra.</p></div>
         <?php else: ?>

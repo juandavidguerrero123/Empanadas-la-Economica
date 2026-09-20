@@ -120,26 +120,26 @@ if ($_SESSION["rol_id"] != 1) {
                 registrados como clientes.
             </p>
 
-            <a href="#" class="btn-primary">
+            <a href="/controller/clientes.php" class="btn-primary">
                 Administrar clientes
             </a>
 
         </article>
 
 
-        <!-- DOMICILIARIOS -->
+        <!-- PERSONAL -->
 
         <article class="tarjeta-admin">
 
-            <h2>🛵 Domiciliarios</h2>
+            <h2>👥 Personal</h2>
 
             <p>
-                Consultar y administrar los usuarios
-                registrados como domiciliarios.
+                Consultar y administrar las cuentas de
+                administradores y domiciliarios.
             </p>
 
-            <a href="#" class="btn-primary">
-                Administrar domiciliarios
+            <a href="/controller/personal.php" class="btn-primary">
+                Administrar personal
             </a>
 
         </article>

@@ -22,6 +22,10 @@ if ($_SERVER["REQUEST_METHOD"] !== "POST") {
 $accion = $_POST["accion"] ?? "";
 $productoId = filter_input(INPUT_POST, "producto_id", FILTER_VALIDATE_INT);
 
+if ($accion === "" && $productoId) {
+    $accion = "eliminar";
+}
+
 if (!isset($_SESSION["carrito"]) || !is_array($_SESSION["carrito"])) {
     $_SESSION["carrito"] = [];
 }

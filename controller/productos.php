@@ -5,6 +5,12 @@ require_once "../model/Producto.php";
 
 $producto = new Producto($conexion);
 
+function redirigirConErrorProducto($mensaje)
+{
+    header('Location: /controller/productos.php?mensaje=' . urlencode($mensaje));
+    exit;
+}
+
 /*
 |--------------------------------------------------------------------------
 | ELIMINAR PRODUCTO
@@ -18,7 +24,7 @@ if (
 ) {
 
     if (!isset($_POST['id']) || !is_numeric($_POST['id'])) {
-        die("Producto no válido.");
+        redirigirConErrorProducto('El producto seleccionado no es válido.');
     }
 
     $id = (int) $_POST['id'];
@@ -27,7 +33,7 @@ if (
     $productoActual = $producto->obtenerPorId($id);
 
     if (!$productoActual) {
-        die("El producto no existe.");
+        redirigirConErrorProducto('El producto seleccionado no existe.');
     }
 
     // Eliminar de la base de datos
@@ -90,7 +96,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $tipoImagen = getimagesize($archivo['tmp_name']);
 
             if ($tipoImagen === false) {
-                die("El archivo seleccionado no es una imagen válida.");
+                redirigirConErrorProducto('El archivo seleccionado no es una imagen válida.');
             }
 
             $extension = strtolower(
@@ -106,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ];
 
             if (!in_array($extension, $extensionesPermitidas)) {
-                die("Formato de imagen no permitido.");
+                redirigirConErrorProducto('El formato de imagen no está permitido.');
             }
 
             $nombreImagen = uniqid('producto_', true) . '.' . $extension;
@@ -117,7 +123,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $archivo['tmp_name'],
                 $rutaImagen
             )) {
-                die("No fue posible guardar la imagen.");
+                redirigirConErrorProducto('No fue posible guardar la imagen.');
             }
 
             $imagen = $nombreImagen;
@@ -142,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $productoActual = $producto->obtenerPorId($id);
 
         if (!$productoActual) {
-            die("El producto no existe.");
+            redirigirConErrorProducto('El producto seleccionado no existe.');
         }
 
         // Mantener la imagen actual
@@ -164,7 +170,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $tipoImagen = getimagesize($archivo['tmp_name']);
 
             if ($tipoImagen === false) {
-                die("El archivo seleccionado no es una imagen válida.");
+                redirigirConErrorProducto('El archivo seleccionado no es una imagen válida.');
             }
 
             $extension = strtolower(
@@ -180,7 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ];
 
             if (!in_array($extension, $extensionesPermitidas)) {
-                die("Formato de imagen no permitido.");
+                redirigirConErrorProducto('El formato de imagen no está permitido.');
             }
 
             $nombreImagen = uniqid('producto_', true) . '.' . $extension;
@@ -191,7 +197,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $archivo['tmp_name'],
                 $rutaImagen
             )) {
-                die("No fue posible guardar la nueva imagen.");
+                redirigirConErrorProducto('No fue posible guardar la nueva imagen.');
             }
 
             $imagenAnterior = $imagen;
