@@ -65,6 +65,13 @@ nav {
     text-align: right;
 }
 
+.usuario-admin-principal {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
 .usuario-admin span {
     display: block;
     font-size: 14px;
@@ -505,6 +512,33 @@ footer {
     margin-top: 4px;
 }
 
+.btn-perfil {
+    background-color: #fff0cf;
+    border: 1px solid rgba(75, 46, 5, .3);
+    border-radius: 50px;
+    box-shadow: 0 4px 0 rgba(75, 46, 5, .48), 0 7px 14px rgba(75, 46, 5, .16);
+    color: var(--marron) !important;
+    display: inline-block !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+    padding: 8px 14px;
+    text-decoration: none;
+    transform: translateY(0);
+    transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.btn-perfil:hover {
+    background-color: white;
+    box-shadow: 0 6px 18px rgba(75, 46, 5, .2);
+    color: var(--rojo) !important;
+    transform: translateY(-2px);
+}
+
+.btn-perfil:active {
+    box-shadow: 0 1px 0 rgba(75, 46, 5, .55);
+    transform: translateY(3px);
+}
+
 .nota-perfil {
     color: #666;
     font-size: 14px;
@@ -570,6 +604,20 @@ footer {
 .pedido-camino { background-color: #d6eaf8; color: #1b4f72; }
 .pedido-entregado { background-color: #d5f5e3; color: #196f3d; }
 
+/* CALIFICACIONES */
+
+.calificaciones-grid { display: grid; gap: 22px; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
+.tarjeta-calificacion { background: white; border-top: 5px solid var(--naranja); border-radius: 12px; box-shadow: 0 3px 12px rgba(75, 46, 5, .15); padding: 24px; }
+.tarjeta-calificacion h3 { color: var(--marron); margin-top: 0; }
+.tarjeta-calificacion form { background: transparent; margin: 0; padding: 0; width: auto; }
+.tarjeta-calificacion label { color: var(--marron); }
+.estrellas-calificacion { color: #e27c1e; font-size: 20px; letter-spacing: 1px; white-space: nowrap; }
+.estrellas-calificacion span { color: #cfc3b2; }
+
+/* MENSAJES DE CONTACTO */
+
+.mensaje-contacto { max-width: 420px; text-align: left !important; white-space: normal; }
+
 .buscador-clientes {
     display: flex;
     align-items: center;
@@ -578,14 +626,40 @@ footer {
 }
 
 /* Relieve para las acciones del panel */
-.btn-primary, .btn-admin, .btn-cancelar, .btn-editar, .btn-eliminar {
+.btn-primary, .btn-admin, .btn-cancelar, .btn-cerrar, .btn-editar, .btn-eliminar, .btn-perfil {
     box-shadow: 0 4px 0 rgba(75, 46, 5, .48), 0 7px 14px rgba(75, 46, 5, .16);
     transform: translateY(0);
     transition: background-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
 
-.btn-primary:hover, .btn-admin:hover, .btn-cancelar:hover, .btn-editar:hover, .btn-eliminar:hover { transform: translateY(-2px); }
-.btn-primary:active, .btn-admin:active, .btn-cancelar:active, .btn-editar:active, .btn-eliminar:active { box-shadow: 0 1px 0 rgba(75, 46, 5, .55); transform: translateY(3px); }
+.btn-primary:hover, .btn-admin:hover, .btn-cancelar:hover, .btn-cerrar:hover, .btn-editar:hover, .btn-eliminar:hover, .btn-perfil:hover { transform: translateY(-2px); }
+.btn-primary:active, .btn-admin:active, .btn-cancelar:active, .btn-cerrar:active, .btn-editar:active, .btn-eliminar:active, .btn-perfil:active { box-shadow: 0 1px 0 rgba(75, 46, 5, .55); transform: translateY(3px); }
+
+/* Botón del perfil en el encabezado administrativo */
+.usuario-admin .btn-perfil {
+    background-color: var(--marron) !important;
+    box-shadow: 0 4px 0 #2c1a03, 0 8px 16px rgba(75, 46, 5, .32) !important;
+    color: var(--blanco) !important;
+    display: inline-block !important;
+    font-size: 14px;
+    font-weight: bold !important;
+    line-height: 1.2;
+    margin-top: 10px !important;
+    padding: 9px 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.usuario-admin .btn-perfil:hover {
+    background-color: var(--rojo) !important;
+    box-shadow: 0 6px 18px rgba(75, 46, 5, .35) !important;
+    transform: translateY(-2px);
+}
+
+.usuario-admin .btn-perfil:active {
+    box-shadow: 0 1px 0 #2c1a03 !important;
+    transform: translateY(3px);
+}
 
 .buscador-clientes label {
     color: var(--marron);

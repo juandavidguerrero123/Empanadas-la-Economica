@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         await cargarSweetAlert();
         mostrarAlertaDeUrl();
         mostrarAlertasDePagina();
+        mostrarEstadoContacto();
         configurarConfirmaciones();
     } catch (error) {
         console.error('No fue posible cargar las alertas.', error);
@@ -16,11 +17,28 @@ function cargarSweetAlert() {
 
     return new Promise((resolver, rechazar) => {
         const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
+        // SweetAlert2 se conserva dentro del proyecto para funcionar sin internet.
+        script.src = '/assets/js/vendor/sweetalert2.all.min.js';
         script.onload = resolver;
         script.onerror = rechazar;
         document.head.appendChild(script);
     });
+}
+
+function mostrarEstadoContacto() {
+    if (!window.location.pathname.endsWith('/contactanos.html')) {
+        return;
+    }
+
+    const estado = new URLSearchParams(window.location.search).get('estado');
+
+    if (estado === 'enviado') {
+        mostrarAlerta({ icon: 'success', title: 'Mensaje enviado', text: 'Gracias por escribirnos. Pronto nos pondremos en contacto contigo.', parametrosUrl: 'estado' });
+    }
+
+    if (estado === 'error') {
+        mostrarAlerta({ icon: 'error', title: 'Revisa la información', text: 'Completa todos los campos con información válida.', parametrosUrl: 'estado' });
+    }
 }
 
 function mostrarAlertaDeUrl() {

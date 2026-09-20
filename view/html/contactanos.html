@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="../../assets/imagenes/Logo.jpg">
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/contactanos.css" rel="stylesheet">
+    <script src="../../assets/js/app.js" defer></script>
 </head>
 
 <body class="body">
@@ -34,22 +35,22 @@
 
     <main class="contacto-principal">
         <section class="contacto-intro"><span>Hablemos</span><h2>Estamos para escucharte</h2><p>Déjanos tu mensaje y nos pondremos en contacto contigo.</p><div class="contacto-dato"><strong>Empanadas La Económica</strong><br>Sabor casero, precio justo.</div></section>
-        <form action="#" class="form-contact">
+        <form action="/controller/contacto.php" method="POST" class="form-contact">
             <div class="formulario-registro">
                 <div class="flex-column">
                     <label for="first-name">Nombre completo</label>
-                    <input type="text" class="login-input" id="first-name" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" placeholder="Ingrese su nombre completo"
+                    <input type="text" class="login-input" id="first-name" name="nombre" maxlength="150" pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" placeholder="Ingrese su nombre completo"
                         title="Caracter no permitido" required>
                 </div>
 
                 <div class="flex-column">
                     <label for="email">Correo</label>
-                    <input type="email" class="login-input" id="email" placeholder="Ingrese su correo electronico" required>
+                    <input type="email" class="login-input" id="email" name="correo" placeholder="Ingrese su correo electronico" required>
                 </div>
 
                 <div class="flex-column">
                     <label for="mensaje">Mensaje</label>
-                    <textarea type="mensaje" id="mensaje" cols="10" rows="5" placeholder="Ingresa el mensaje" required></textarea>
+                    <textarea id="mensaje" name="mensaje" cols="10" rows="5" maxlength="1000" placeholder="Ingresa el mensaje" required></textarea>
                 </div>
 
             </div>

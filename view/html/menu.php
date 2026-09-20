@@ -35,6 +35,7 @@ $error = $_GET["error"] ?? "";
             </div>
             <div class="bloque acciones-menu">
                 <a href="carrito.php" class="btn-carrito"><i class="fa-solid fa-cart-shopping"></i> Carrito <span><?= $cantidadCarrito ?></span></a>
+                <a href="../../controller/calificaciones.php" class="btn-secondary">Calificar servicio</a>
                 <a href="../../controller/perfil.php" class="btn-secondary">Mi perfil</a>
                 <a href="../../controller/cerrar_sesion.php" class="btn-secondary">Cerrar sesión</a>
             </div>

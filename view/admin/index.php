@@ -33,7 +33,9 @@ if ($_SESSION["rol_id"] != 1) {
 
     <link rel="icon" type="image/png" href="../../assets/imagenes/Logo.jpg">
 
-    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/admin.css?v=20260920b">
+
+    <script src="/assets/js/app.js" defer></script>
 
 </head>
 
@@ -63,10 +65,14 @@ if ($_SESSION["rol_id"] != 1) {
 
         <div class="usuario-admin">
 
-            <?= htmlspecialchars($_SESSION["nombre"]) ?>
-            <?= htmlspecialchars($_SESSION["apellido"]) ?>
+            <div class="usuario-admin-principal">
+                <a href="/controller/perfil.php" class="btn-primary btn-perfil">Mi perfil</a>
 
-            <a href="/controller/perfil.php">Mi perfil</a>
+                <strong>
+                    <?= htmlspecialchars($_SESSION["nombre"]) ?>
+                    <?= htmlspecialchars($_SESSION["apellido"]) ?>
+                </strong>
+            </div>
 
             <span>
                 Administrador
@@ -160,6 +166,42 @@ if ($_SESSION["rol_id"] != 1) {
 
             <a href="/controller/pedidos.php" class="btn-primary">
                 Ver pedidos
+            </a>
+
+        </article>
+
+
+        <!-- CALIFICACIONES -->
+
+        <article class="tarjeta-admin">
+
+            <h2>⭐ Calificaciones</h2>
+
+            <p>
+                Consultar las opiniones de los clientes
+                sobre el servicio recibido.
+            </p>
+
+            <a href="/controller/admin_calificaciones.php" class="btn-primary">
+                Ver calificaciones
+            </a>
+
+        </article>
+
+
+        <!-- CONTACTOS -->
+
+        <article class="tarjeta-admin">
+
+            <h2>✉️ Contactos</h2>
+
+            <p>
+                Consultar los mensajes recibidos
+                desde el formulario de contacto.
+            </p>
+
+            <a href="/controller/admin_contactos.php" class="btn-primary">
+                Ver mensajes
             </a>
 
         </article>

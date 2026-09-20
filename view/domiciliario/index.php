@@ -11,7 +11,7 @@
     <div class="admin-container">
         <header class="admin-header">
             <div class="admin-logo"><img src="/assets/imagenes/Logo.jpg" alt="Empanadas La Económica"></div>
-            <div><h1>Panel de entregas</h1><p>Bienvenido, <?= htmlspecialchars($_SESSION['nombre']) ?> <?= htmlspecialchars($_SESSION['apellido']) ?> · <a href="/controller/perfil.php">Mi perfil</a></p></div>
+            <div><h1>Panel de entregas</h1><p>Bienvenido, <?= htmlspecialchars($_SESSION['nombre']) ?> <?= htmlspecialchars($_SESSION['apellido']) ?></p><a href="/controller/perfil.php" class="btn-perfil">Mi perfil</a></div>
         </header>
         <main class="admin-content">
             <?php if (isset($_GET['mensaje'], $_GET['tipo'])): ?>
